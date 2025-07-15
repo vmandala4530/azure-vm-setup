@@ -1,0 +1,11 @@
+# Use the official NGINX base image
+FROM nginx:latest
+
+# Remove the default NGINX homepage
+RUN rm /usr/share/nginx/html/index.html
+
+# Copy your custom HTML into the container
+COPY index.html /usr/share/nginx/html/
+
+# Expose port 80 (default NGINX port)
+EXPOSE 80
